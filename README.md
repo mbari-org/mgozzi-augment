@@ -1,1 +1,3 @@
 # mgozzi-augment
+## Note for Sagemaker
+Sometimes paths are tricky to find on Sagemaker as the terminal does not reveal the same paths as running a script in a notebook. For example, when configuring the custom_config.yaml file under the /opt/ml/custom_config.yaml, the terminal revealed the file location to be <code>/home/sagemaker-user/mgozzi-augment/deepsea-yolov5/opt/ml/input/data/images/train</code> which yielded a file not found error when running the associated command via the notebook. The correct path was found to be <code>/root/mgozzi-augment/deepsea-yolov5/opt/ml/input/data/images/train</code>. This shows that the notebook runs as a root user, and omits the sagemaker-user directory. 
